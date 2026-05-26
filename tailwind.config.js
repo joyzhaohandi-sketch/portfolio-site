@@ -12,8 +12,8 @@ export default {
         lilac: '#d8c7e8',
       },
       fontFamily: {
-        heading: ['"Fraunces"', '"Cormorant Garamond"', 'serif'],
-        body: ['"Manrope"', '"Nunito"', 'system-ui', 'sans-serif'],
+        heading: ['"Instrument Serif"', '"Cormorant Garamond"', 'serif'],
+        body: ['"Plus Jakarta Sans"', '"Nunito"', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         soft: '0 20px 55px -35px rgba(39, 52, 61, 0.42)',
