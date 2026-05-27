@@ -1,226 +1,153 @@
-const featuredWorks = [
+const heroTags = ['Children’s Illustration', 'Graphic Design', 'Motion Direction']
+
+const featuredProjects = [
   {
-    title: 'Night Garden Parade',
-    subtitle: 'Picture Book Illustration • 2026',
+    title: 'Moonlight Library Parade',
+    discipline: 'Picture Book Spread Series',
+    year: '2026',
+    palette: 'Peach / Plum / Sky',
     image:
-      'https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?auto=format&fit=crop&w=1200&q=80',
-    tone: 'from-[#F8DAC5]/80 to-[#E7C7E8]/40',
+      'https://images.unsplash.com/photo-1461975670840-9d6aefdea91e?auto=format&fit=crop&w=1400&q=80',
   },
   {
-    title: 'Cloud Theater Club',
-    subtitle: 'Editorial Cover Series • 2025',
+    title: 'Little Makers Club',
+    discipline: 'Identity + Poster Family',
+    year: '2025',
+    palette: 'Moss / Butter / Ink',
     image:
-      'https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?auto=format&fit=crop&w=1200&q=80',
-    tone: 'from-[#CBE4DD]/70 to-[#F9EEDC]/60',
+      'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1400&q=80',
   },
   {
-    title: 'Little Atlas of Whales',
-    subtitle: 'Character & World Design • 2026',
+    title: 'Cloud Train Chronicles',
+    discipline: 'Animated Story Teasers',
+    year: '2026',
+    palette: 'Teal / Coral / Smoke',
     image:
-      'https://images.unsplash.com/photo-1460654156040-73f8655fdf0f?auto=format&fit=crop&w=1200&q=80',
-    tone: 'from-[#BFD9E8]/70 to-[#EBD8F4]/45',
+      'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1400&q=80',
   },
 ]
 
-const designProjects = [
+const projectCards = [
   {
-    name: 'Poppy & Pine',
-    role: 'Brand Identity + Packaging System',
-    blurb: 'Boutique toy brand crafted with tactile typography and hand-painted motifs.',
+    name: 'Tiny Giants Annual',
+    category: 'Editorial Illustration',
+    summary: 'A bright, page-turning visual language for a kids culture annual with rich pacing and playful type locks.',
   },
   {
-    name: 'Sunday Story Journal',
-    role: 'Editorial Direction + Layout',
-    blurb: 'Magazine-inspired spreads balancing playful illustration with refined grids.',
+    name: 'Willow Toyhouse',
+    category: 'Packaging + Illustration',
+    summary: 'Shelf-ready packaging system combining hand-drawn characters, bold labels, and motion-ready iconography.',
   },
   {
-    name: 'Tiny Cinema Fest',
-    role: 'Campaign Visual System',
-    blurb: 'Poster family, social visuals, and title cards for children’s animation screenings.',
+    name: 'Story Hour Studio',
+    category: 'Brand + Motion Toolkit',
+    summary: 'Brand refresh with flexible compositional rules, social templates, and short animated idents.',
   },
-]
-
-const motionProjects = [
-  { title: 'Storybook opener sequences', length: '00:18—00:32 loops' },
-  { title: 'Character micro-interactions for web', length: 'SVG + 2D hybrid' },
-  { title: 'Social motion postcards', length: 'Vertical + square edits' },
 ]
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-paper text-ink font-body">
-      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute -left-16 top-20 h-72 w-72 rounded-full bg-coral/45 blur-3xl animate-breathe" />
-        <div className="absolute right-[-5%] top-[18%] h-80 w-80 rounded-full bg-seafoam/45 blur-3xl animate-floatSlow" />
-        <div className="absolute bottom-[-6%] left-[25%] h-72 w-72 rounded-full bg-lilac/45 blur-3xl animate-drift" />
-      </div>
-
-      <header className="sticky top-0 z-40 border-b border-ink/10 bg-paper/85 backdrop-blur-xl">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-10">
-          <a href="#top" className="font-heading text-2xl tracking-tight">Lumi Atelier</a>
-          <div className="hidden items-center gap-7 text-sm md:flex">
-            {['Work', 'Design', 'Motion', 'About', 'Contact'].map((item) => (
-              <a key={item} href={`#${item.toLowerCase()}`} className="relative transition hover:text-teal after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-teal after:transition-all hover:after:w-full">
+    <div className="min-h-screen bg-[#f5f0e8] text-[#1f2b2a] font-body">
+      <header className="sticky top-0 z-50 border-b border-[#1f2b2a]/10 bg-[#f5f0e8]/85 backdrop-blur-lg">
+        <nav className="mx-auto flex w-full max-w-[1200px] items-center justify-between px-5 py-4 md:px-10">
+          <a href="#top" className="font-heading text-[1.7rem] leading-none tracking-[0.01em]">Mira Finch Studio</a>
+          <div className="hidden items-center gap-7 text-[0.82rem] font-medium tracking-[0.06em] uppercase md:flex">
+            {['Work', 'Projects', 'Motion', 'About', 'Contact'].map((item) => (
+              <a key={item} href={`#${item.toLowerCase()}`} className="transition hover:text-[#a64c3a]">
                 {item}
               </a>
             ))}
           </div>
-          <a href="#contact" className="rounded-full border border-ink/15 bg-white/75 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] transition hover:-translate-y-0.5 hover:border-teal hover:text-teal">
-            Let’s Talk
+          <a href="#contact" className="rounded-full bg-[#1f2b2a] px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#f5f0e8] transition hover:bg-[#a64c3a]">
+            Book a Project
           </a>
         </nav>
       </header>
 
-      <main id="top" className="mx-auto max-w-6xl px-5 pb-20 pt-8 md:px-10 md:pt-14">
-        <section className="grid gap-8 md:grid-cols-12 md:gap-10">
-          <div className="md:col-span-7 md:pt-8">
-            <p className="inline-flex rounded-full border border-teal/25 bg-white/70 px-4 py-1 text-[11px] uppercase tracking-[0.26em] text-ink/70">
-              Children’s Illustrator • Graphic Designer • Motion Artist
-            </p>
-            <h1 className="mt-5 max-w-3xl font-heading text-5xl leading-[0.95] text-ink md:text-8xl">
-              Whimsical worlds,
-              <span className="block text-teal">editorial clarity,</span>
-              and cinematic motion.
+      <main id="top" className="mx-auto max-w-[1200px] px-5 pb-20 pt-10 md:px-10 md:pt-16">
+        <section className="grid items-start gap-12 md:grid-cols-12">
+          <div className="md:col-span-7">
+            <p className="text-[0.68rem] uppercase tracking-[0.26em] text-[#1f2b2a]/60">Illustrator • Designer • Motion Artist</p>
+            <h1 className="mt-5 max-w-4xl font-heading text-[3.25rem] leading-[0.88] tracking-[-0.012em] md:text-[6.8rem]">
+              Story-driven visuals
+              <span className="block text-[#a64c3a]">for curious young minds.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-ink/75 md:text-lg">
-              I craft playful, polished visual narratives for books, brands, and studios—blending hand-drawn warmth with modern design systems and gentle movement.
+            <p className="mt-7 max-w-[36rem] text-[1.02rem] leading-[1.9] tracking-[0.002em] text-[#1f2b2a]/75 md:text-[1.12rem]">
+              I build imaginative picture-book worlds, personality-rich brand systems, and gentle motion moments that make stories feel alive.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#work" className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-paper transition duration-300 hover:-translate-y-1 hover:bg-teal">
-                Explore Portfolio
-              </a>
-              <a href="#motion" className="rounded-full border border-ink/20 bg-white/70 px-6 py-3 text-sm font-semibold transition duration-300 hover:-translate-y-1 hover:border-teal hover:text-teal">
-                View Motion Reel
-              </a>
+              {heroTags.map((tag) => (
+                <span key={tag} className="rounded-full border border-[#1f2b2a]/20 px-4 py-2 text-[0.66rem] font-medium uppercase tracking-[0.18em]">
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
 
-          <div className="relative md:col-span-5">
-            <div className="aspect-[4/5] overflow-hidden rounded-[2.2rem] border border-white/60 bg-white shadow-soft">
+          <div className="md:col-span-5 md:pt-4">
+            <div className="relative overflow-hidden rounded-[2rem] border border-[#1f2b2a]/10 bg-white p-3 shadow-[0_20px_60px_-35px_rgba(0,0,0,0.35)]">
               <img
-                src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80"
-                alt="Featured illustration collage"
-                className="h-full w-full object-cover transition duration-700 hover:scale-105"
+                src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=1300&q=80"
+                alt="Illustrated desk and sketchbook"
+                className="h-[410px] w-full rounded-[1.5rem] object-cover"
               />
-            </div>
-            <div className="absolute -bottom-4 -left-4 w-44 rounded-3xl border border-white/50 bg-white/80 p-4 shadow-soft backdrop-blur md:w-52">
-              <p className="text-[10px] uppercase tracking-[0.24em] text-ink/55">Latest</p>
-              <p className="mt-2 font-heading text-xl leading-tight">Spring Picture Book Series</p>
+              <div className="absolute bottom-8 left-8 rounded-2xl bg-[#f5f0e8]/90 px-4 py-3 backdrop-blur">
+                <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-[#1f2b2a]/60">Currently</p>
+                <p className="text-[0.95rem] font-semibold leading-snug">Authoring a whimsical forest chapter book</p>
+              </div>
             </div>
           </div>
         </section>
 
         <section id="work" className="mt-24">
-          <div className="mb-8 flex flex-col gap-4 md:mb-10 md:flex-row md:items-end md:justify-between">
-            <h2 className="font-heading text-4xl leading-tight md:text-6xl">Featured Illustration</h2>
-            <p className="max-w-sm text-sm text-ink/65">A curated collection of narrative illustrations, character explorations, and exhibition-ready artworks.</p>
+          <div className="mb-8 flex items-end justify-between gap-4">
+            <h2 className="font-heading text-[2.85rem] leading-[0.9] tracking-[-0.01em] md:text-[5.2rem]">Selected Work</h2>
+            <p className="max-w-md text-[0.95rem] leading-relaxed text-[#1f2b2a]/65">A portfolio built with wide spacing, clear rhythm, and tactile image-first storytelling.</p>
           </div>
 
           <div className="grid gap-5 md:grid-cols-12">
-            {featuredWorks.map((work, idx) => (
-              <article
-                key={work.title}
-                className={`group relative overflow-hidden rounded-[2rem] border border-white/60 bg-white shadow-card transition duration-500 hover:-translate-y-1 ${
-                  idx === 0 ? 'md:col-span-7' : 'md:col-span-5'
-                }`}
-              >
-                <div className={`absolute inset-0 bg-gradient-to-br ${work.tone} opacity-0 transition duration-500 group-hover:opacity-100`} />
-                <div className="relative h-64 overflow-hidden md:h-80">
-                  <img src={work.image} alt={work.title} className="h-full w-full object-cover transition duration-700 group-hover:scale-110" />
+            {featuredProjects.map((project, index) => (
+              <article key={project.title} className={`group overflow-hidden rounded-[1.8rem] border border-[#1f2b2a]/10 bg-white ${index === 0 ? 'md:col-span-7' : 'md:col-span-5'}`}>
+                <div className="overflow-hidden">
+                  <img src={project.image} alt={project.title} className="h-64 w-full object-cover transition duration-700 group-hover:scale-105 md:h-80" />
                 </div>
-                <div className="relative space-y-1 p-5 md:p-6">
-                  <h3 className="font-heading text-2xl md:text-3xl">{work.title}</h3>
-                  <p className="text-xs uppercase tracking-[0.16em] text-ink/60">{work.subtitle}</p>
+                <div className="space-y-1 p-5">
+                  <h3 className="font-heading text-[2.05rem] leading-[0.95] tracking-[-0.01em] md:text-[2.8rem]">{project.title}</h3>
+                  <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#1f2b2a]/60">{project.discipline} • {project.year}</p>
+                  <p className="text-[0.86rem] tracking-[0.04em] text-[#a64c3a]">{project.palette}</p>
                 </div>
               </article>
             ))}
           </div>
         </section>
 
-        <section id="design" className="mt-24 grid gap-8 md:grid-cols-12 md:items-start">
+        <section id="projects" className="mt-24 grid gap-10 md:grid-cols-12">
           <div className="md:col-span-4">
-            <h2 className="font-heading text-4xl leading-tight md:text-6xl">Graphic Design</h2>
-            <p className="mt-4 text-sm leading-relaxed text-ink/70">Brand worlds and editorial systems built with playful texture, thoughtful hierarchy, and a studio-grade finish.</p>
+            <h2 className="font-heading text-[2.85rem] leading-[0.9] tracking-[-0.01em] md:text-[5.2rem]">Design Projects</h2>
           </div>
           <div className="grid gap-4 md:col-span-8">
-            {designProjects.map((project) => (
-              <article key={project.name} className="group rounded-[1.7rem] border border-ink/10 bg-white/85 p-6 shadow-soft transition duration-300 hover:border-teal/25 hover:bg-white hover:-translate-y-1">
-                <p className="text-[10px] uppercase tracking-[0.2em] text-ink/55">Selected Project</p>
-                <div className="mt-3 flex flex-col justify-between gap-3 md:flex-row md:items-end">
-                  <div>
-                    <h3 className="font-heading text-3xl">{project.name}</h3>
-                    <p className="text-sm text-ink/70">{project.role}</p>
-                  </div>
-                  <span className="text-xs text-teal transition group-hover:translate-x-1">View Case →</span>
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-ink/75">{project.blurb}</p>
+            {projectCards.map((item) => (
+              <article key={item.name} className="rounded-[1.5rem] border border-[#1f2b2a]/10 bg-[#fffdf9] p-6 transition hover:-translate-y-1 hover:border-[#a64c3a]/30">
+                <p className="text-[0.68rem] font-medium uppercase tracking-[0.2em] text-[#1f2b2a]/55">{item.category}</p>
+                <h3 className="mt-2 font-heading text-[2.3rem] leading-[0.94] tracking-[-0.01em]">{item.name}</h3>
+                <p className="mt-3 max-w-[40rem] text-[0.98rem] leading-[1.85] text-[#1f2b2a]/75">{item.summary}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section id="motion" className="mt-24 grid gap-6 rounded-[2.3rem] border border-teal/20 bg-ink p-6 text-paper shadow-card md:grid-cols-12 md:p-10">
-          <div className="md:col-span-5">
-            <p className="text-xs uppercase tracking-[0.25em] text-paper/65">Motion Design</p>
-            <h2 className="mt-3 font-heading text-4xl leading-tight md:text-6xl">Subtle movement, strong storytelling rhythm.</h2>
-            <p className="mt-4 text-paper/75">From title sequences to looping social assets, my motion work combines tactile illustration with elegant transitions and timing.</p>
+        <section id="motion" className="mt-24 rounded-[2rem] bg-[#1f2b2a] p-8 text-[#f5f0e8] md:p-10">
+          <p className="text-[0.68rem] font-medium uppercase tracking-[0.24em] text-[#f5f0e8]/65">Motion Reel</p>
+          <div className="mt-4 grid gap-8 md:grid-cols-12">
+            <h2 className="font-heading text-[2.9rem] leading-[0.92] tracking-[-0.01em] md:col-span-6 md:text-[5rem]">Gentle pacing, expressive transitions.</h2>
+            <ul className="space-y-3 md:col-span-6">
+              <li className="rounded-xl border border-[#f5f0e8]/20 px-4 py-3 text-[0.98rem] leading-relaxed tracking-[0.01em]">Opening title loops for educational series</li>
+              <li className="rounded-xl border border-[#f5f0e8]/20 px-4 py-3 text-[0.98rem] leading-relaxed tracking-[0.01em]">Character-led explainer sequences</li>
+              <li className="rounded-xl border border-[#f5f0e8]/20 px-4 py-3 text-[0.98rem] leading-relaxed tracking-[0.01em]">Short-form motion stickers and social snippets</li>
+            </ul>
           </div>
-          <div className="md:col-span-7 md:pl-5">
-            <div className="rounded-3xl border border-paper/15 bg-paper/10 p-5 backdrop-blur">
-              <div className="mb-4 flex items-center justify-between border-b border-paper/15 pb-3">
-                <p className="font-semibold">Reel Highlights</p>
-                <span className="rounded-full border border-paper/20 px-3 py-1 text-xs">Now Playing</span>
-              </div>
-              <div className="space-y-3">
-                {motionProjects.map((item) => (
-                  <div key={item.title} className="group flex items-center justify-between rounded-2xl border border-paper/10 bg-paper/5 px-4 py-3 transition hover:bg-paper/15">
-                    <p>{item.title}</p>
-                    <span className="text-xs text-paper/70 group-hover:text-paper">{item.length}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="about" className="mt-24 grid gap-8 md:grid-cols-12 md:items-center">
-          <div className="order-2 md:order-1 md:col-span-5">
-            <h2 className="font-heading text-4xl md:text-6xl">About</h2>
-            <p className="mt-4 leading-relaxed text-ink/80">I’m a multidisciplinary visual storyteller partnering with publishers, lifestyle brands, and creative teams to craft charming, emotionally rich visual experiences. My process balances intuitive drawing, editorial precision, and motion-minded composition.</p>
-          </div>
-          <div className="order-1 md:order-2 md:col-span-7">
-            <img
-              className="h-[420px] w-full rounded-[2rem] object-cover shadow-card"
-              src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1300&q=80"
-              alt="Artist portrait placeholder"
-            />
-          </div>
-        </section>
-
-        <section id="contact" className="mt-24 rounded-[2rem] border border-ink/10 bg-white/80 p-6 shadow-soft md:p-10">
-          <h2 className="font-heading text-4xl leading-tight md:text-6xl">Let’s make something unforgettable.</h2>
-          <p className="mt-3 max-w-xl text-ink/70">Open for picture book projects, visual identity work, and motion collaborations.</p>
-          <form className="mt-8 grid gap-4 md:grid-cols-2">
-            <input className="rounded-2xl border border-ink/15 bg-white px-4 py-3 outline-none transition focus:border-teal" placeholder="Name" />
-            <input className="rounded-2xl border border-ink/15 bg-white px-4 py-3 outline-none transition focus:border-teal" placeholder="Email" type="email" />
-            <textarea className="min-h-36 rounded-2xl border border-ink/15 bg-white px-4 py-3 outline-none transition focus:border-teal md:col-span-2" placeholder="Tell me about your project" />
-            <button className="rounded-full bg-teal px-7 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-ink md:col-span-2 md:w-fit">Send Inquiry</button>
-          </form>
         </section>
       </main>
-
-      <footer className="border-t border-ink/10 bg-white/70 px-5 py-8 md:px-10">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 text-sm text-ink/75 md:flex-row md:items-center md:justify-between">
-          <p>© {new Date().getFullYear()} Lumi Atelier</p>
-          <div className="flex flex-wrap gap-5">
-            {['Instagram', 'Behance', 'Dribbble', 'Vimeo'].map((social) => (
-              <a key={social} href="#" className="transition hover:text-teal">
-                {social}
-              </a>
-            ))}
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }
